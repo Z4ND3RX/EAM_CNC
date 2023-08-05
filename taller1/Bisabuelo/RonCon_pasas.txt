@@ -1,0 +1,5 @@
+nombre: Ron Con
+apellido: Pasas
+correo: ronconpasas@gmail.com
+RH: O-
+cm: 178

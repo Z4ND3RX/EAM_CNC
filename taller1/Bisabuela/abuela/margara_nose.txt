@@ -1,0 +1,6 @@
+nombre: Márgara
+apellido: Nose
+correo: margarazo@gmail.com
+RH: O+
+cm: 156
+

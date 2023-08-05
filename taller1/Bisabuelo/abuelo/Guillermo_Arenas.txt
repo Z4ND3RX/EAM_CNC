@@ -1,0 +1,5 @@
+nombre: Guillermo
+apellido: Arenas
+correo: guilleare@gmail.com
+RH: A+
+cm: 164

@@ -1,0 +1,5 @@
+nombre: Johnny
+apellido: Ocampo
+correo: perdomo@gmail.com
+RH: A+
+cm: 170

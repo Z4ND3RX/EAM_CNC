@@ -1,0 +1,5 @@
+nombre: Manuela
+apellido: Vera
+correo: manuv@gmail.com
+RH: A-
+cm: 169

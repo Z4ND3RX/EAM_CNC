@@ -1,0 +1,5 @@
+nombre: Laura
+apellido: XXXX
+correo: lala@gmail.com
+RH: A+
+cm: 173

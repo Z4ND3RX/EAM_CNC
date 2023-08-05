@@ -1,0 +1,5 @@
+nombre: Andrés
+apellido: Ocampo
+correo: ocampo@gmail.com
+RH: A+
+cm: 177

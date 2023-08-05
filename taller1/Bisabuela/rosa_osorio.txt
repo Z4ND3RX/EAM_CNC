@@ -1,0 +1,6 @@
+nombre: Rosa
+apellido: Osorio
+correo: rositaso@gmail.com
+RH: O-
+cm: 165
+
