@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electiva V</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #texto {
+            font-size: 48px;
+            color: green;
+            text-transform: uppercase;
+            animation: hacking 0.5s linear infinite, fall 1s ease-in-out infinite;
+        }
+        @keyframes hacking {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="texto"> < > Andrés Ocampo < /> </div>
+    </div>
+</body>
+</html>
