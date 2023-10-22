@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="docker (1)" />
+        <module name="docker (3)" />
+        <module name="docker (2)" />
+        <module name="docker (4)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="docker" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="docker" options="-parameters" />
+      <module name="docker (1)" options="-parameters" />
+      <module name="docker (2)" options="-parameters" />
+      <module name="docker (3)" options="-parameters" />
+      <module name="docker (4)" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,70 @@
+version: '3.9'
+
+services:
+  add_service:
+    container_name: add_service
+    image: pee-add-service:1.0.0
+    build: ./add
+    ports:
+      - 8081:8080
+    environment:
+      - DATABASE_URL=jdbc:postgresql://java_db:5432/postgres
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+    depends_on:
+      - java_db
+    volumes:
+      - /home/z4nd3rx/EAM_CNC/parcial2/docker/java_app_data:/path/to/java_app/data
+  put_service:
+    container_name: put_service
+    image: pee-put-service:1.0.0
+    build: ./put
+    ports:
+      - 8082:8080
+    environment:
+      - DATABASE_URL=jdbc:postgresql://java_db:5432/postgres
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+    depends_on:
+      - java_db
+    volumes:
+      - /home/z4nd3rx/EAM_CNC/parcial2/docker/java_app_data:/path/to/java_app/data
+  get_service:
+    container_name: get_service
+    image: pee-get-service:1.0.0
+    build: ./get
+    ports:
+      - 8083:8080
+    environment:
+      - DATABASE_URL=jdbc:postgresql://java_db:5432/postgres
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+    depends_on:
+      - java_db
+    volumes:
+      - /home/z4nd3rx/EAM_CNC/parcial2/docker/java_app_data:/path/to/java_app/data
+  delete_service:
+    container_name: delete_service
+    image: pee-delete-service:1.0.0
+    build: ./delete
+    ports:
+      - 8084:8080
+    environment:
+      - DATABASE_URL=jdbc:postgresql://java_db:5432/postgres
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+    depends_on:
+      - java_db
+    volumes:
+      - /home/z4nd3rx/EAM_CNC/parcial2/docker/java_app_data:/path/to/java_app/data
+  java_db:
+    container_name: java_db
+    image: postgres:12
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - /home/z4nd3rx/EAM_CNC/parcial2/docker/postgres_data:/var/lib/postgresql/data
