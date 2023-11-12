@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delete-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: delete-service
+  template:
+    metadata:
+      labels:
+        app: delete-service
+    spec:
+      containers:
+        - name: delete-service
+          image: z4nd3rx/spring_services:delete_service_v1.0.0
+          ports:
+            - containerPort: 8084
+          env:
+            - name: DATABASE_URL
+              value: "jdbc:postgresql://database-service:5432/postgres"
+            - name: DATABASE_USERNAME
+              value: "postgres"
+            - name: DATABASE_PASSWORD
+              value: "postgres"

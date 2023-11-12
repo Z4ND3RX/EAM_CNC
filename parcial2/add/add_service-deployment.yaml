@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: add-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: add-service
+  template:
+    metadata:
+      labels:
+        app: add-service
+    spec:
+      containers:
+        - name: add-service
+          image: z4nd3rx/spring_services:add_service_v1.0.0
+          ports:
+            - containerPort: 8081
+          env: # Setting Enviornmental Variables
+            - name: DB_HOST   # Setting Database host address from configMap
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: host
+
+            - name: DB_NAME  # Setting Database name from configMap
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: dbName
+
+            - name: DB_USERNAME  # Setting Database username from Secret
+              valueFrom:
+                secretKeyRef:
+                  name: database-secrets
+                  key: username
+
+            - name: DB_PASSWORD # Setting Database password from Secret
+              valueFrom:
+                secretKeyRef:
+                  name: database-secrets
+                  key: password

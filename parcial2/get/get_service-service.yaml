@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: get-service-service
+spec:
+  selector:
+    app: get-service
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 8080
+  type: NodePort

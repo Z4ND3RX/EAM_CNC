@@ -13,8 +13,6 @@ services:
       - DATABASE_PASSWORD=postgres
     depends_on:
       - java_db
-    volumes:
-      - /home/z4nd3rx/EAM_CNC/parcial2/docker/java_app_data:/path/to/java_app/data
   put_service:
     container_name: put_service
     image: z4nd3rx/spring_services:put_service_v1.0.0
@@ -27,8 +25,6 @@ services:
       - DATABASE_PASSWORD=postgres
     depends_on:
       - java_db
-    volumes:
-      - /home/z4nd3rx/EAM_CNC/parcial2/docker/java_app_data:/path/to/java_app/data
   get_service:
     container_name: get_service
     image: z4nd3rx/spring_services:get_service_v1.0.0
@@ -41,8 +37,6 @@ services:
       - DATABASE_PASSWORD=postgres
     depends_on:
       - java_db
-    volumes:
-      - /home/z4nd3rx/EAM_CNC/parcial2/docker/java_app_data:/path/to/java_app/data
   delete_service:
     container_name: delete_service
     image: z4nd3rx/spring_services:delete_service_v1.0.0
@@ -55,8 +49,6 @@ services:
       - DATABASE_PASSWORD=postgres
     depends_on:
       - java_db
-    volumes:
-      - /home/z4nd3rx/EAM_CNC/parcial2/docker/java_app_data:/path/to/java_app/data
   java_db:
     container_name: java_db
     image: postgres:12

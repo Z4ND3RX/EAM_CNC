@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: put-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: put-service
+  template:
+    metadata:
+      labels:
+        app: put-service
+    spec:
+      containers:
+        - name: put-service
+          image: z4nd3rx/spring_services:put_service_v1.0.0
+          ports:
+            - containerPort: 8082
+          env:
+            - name: DATABASE_URL
+              value: "jdbc:postgresql://database-service:5432/postgres"
+            - name: DATABASE_USERNAME
+              value: "postgres"
+            - name: DATABASE_PASSWORD
+              value: "postgres"

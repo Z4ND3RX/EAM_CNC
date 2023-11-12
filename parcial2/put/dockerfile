@@ -1,3 +1,4 @@
 FROM openjdk:17-jdk-alpine
+EXPOSE 8080
 COPY target/docker-0.0.1-SNAPSHOT.jar put_service.jar
 ENTRYPOINT ["java", "-jar", "put_service.jar"]

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: get-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: get-service
+  template:
+    metadata:
+      labels:
+        app: get-service
+    spec:
+      containers:
+        - name: get-service
+          image: z4nd3rx/spring_services:get_service_v1.0.0
+          ports:
+            - containerPort: 8083
+          env:
+            - name: DATABASE_URL
+              value: "jdbc:postgresql://database-service:5432/postgres"
+            - name: DATABASE_USERNAME
+              value: "postgres"
+            - name: DATABASE_PASSWORD
+              value: "postgres"
